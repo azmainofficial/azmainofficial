@@ -1,4 +1,4 @@
-<img align ="center" alt="Coding" width="1200" src="https://i.pinimg.com/originals/13/55/b5/1355b597f4091308449080068dc6a63a.gif" alt="azmainofficial">
+<img align ="center" alt="Coding" width="1200" src="https://media.tenor.com/ZSRfK14Kek8AAAAC/lofi-vaporwave.gif" alt="azmainofficial">
 <h1 align="center">Hi 👋, I'm Azmain Sheikh</h1>
 <h3 align="center">A passionate at Software Development from Bangladesh</h3>
 <img align ="right" alt="Coding" width="400" src="https://coolmaterial.com/wp-content/uploads/2013/02/heart.gif">
