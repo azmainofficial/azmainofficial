@@ -1,4 +1,4 @@
-<img align ="center" alt="Coding" width="1200" src="[https://wallpaperaccess.com/full/8351156.gif](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fpon-di-gaza&psig=AOvVaw1rfddRUNwa0qYF_CsH94uH&ust=1744997858847000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJCxh9TN34wDFQAAAAAdAAAAABA5)">
+<img align ="center" alt="Coding" width="1200" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fpon-di-gaza&psig=AOvVaw1rfddRUNwa0qYF_CsH94uH&ust=1744997858847000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCJCxh9TN34wDFQAAAAAdAAAAABA5">
 <h1 align="center">Hi 👋, I'm Azmain Sheikh</h1>
 <h3 align="center">A passionate at Software Development & Machine Learning from Bangladesh</h3>
 <img align ="right" alt="Coding" width="400" src="https://coolmaterial.com/wp-content/uploads/2013/02/heart.gif">
