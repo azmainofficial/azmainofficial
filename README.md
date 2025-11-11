@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://media4.giphy.com/media/8c4zSICCI2BTDHco2j/giphy_s.gif?cid=6c09b952bnabve1xgfvu31ufndjln67e9lmta8vq5udf43r3&ep=v1_gifs_search&rid=giphy_s.gif&ct=g" alt="Coding" width="100%"/>
+  <img src="https://media4.giphy.com/media/8c4zSICCI2BTDHco2j/giphy_s.gif?cid=6c09b952bnabve1xgfvu31ufndjln67e9lmta8vq5udf43r3&ep=v1_gifs_search&rid=giphy_s.gif&ct=g" alt="Coding Animation" width="100%"/>
 </div>
 
 <br/>
@@ -49,32 +49,9 @@
   <img src="https://techstack-generator.vercel.app/icons?icons=python,laravel,react,reactnative,nodejs,tailwindcss,tensorflow,qt,c,cplusplus,dotnet,mysql,mongodb,arduino,illustrator&theme=dark" alt="Tech Stack" width="90%"/>
 </div>
 
-<style>
-  .tech-icon {
-    transition: all 0.3s ease;
-    filter: grayscale(0%);
-  }
-  .tech-icon:hover {
-    transform: translateY(-8px) scale(1.15);
-    filter: grayscale(0%) drop-shadow(0 0 8px #00D9FF);
-  }
-</style>
-
-<script>
-  // Optional: Add sparkle effect on hover
-  document.querySelectorAll('.tech-icon').forEach(icon => {
-    icon.addEventListener('mouseenter', () => {
-      icon.style.animation = 'pulse 1.5s infinite';
-    });
-    icon.addEventListener('mouseleave', () => {
-      icon.style.animation = '';
-    });
-  });
-</script>
-
 ---
 
-### 🔥 GitHub Streaks & Stats
+### 🔥 GitHub Streaks, Stats & Trophies
 
 <div align="center">
   <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=azmainofficial&theme=dark&hide_border=true&background=0D1117&stroke=00D9FF&ring=00D9FF&fire=FF6B6B&currStreakLabel=00D9FF" alt="GitHub Streaks"/>
@@ -85,82 +62,59 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=azmainofficial&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF&langs_count=8" alt="Top Languages"/>
 </div>
 
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=azmainofficial&theme=dracula&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+</div>
+
 ---
 
-### 🎨 Animated 3D Skill Cards (Hover Me!)
+### 🎨 Animated 3D Skill Cards (Hover-Ready via SVG!)
 
 <div align="center">
   <table>
     <tr>
       <td align="center" width="25%">
-        <div class="card" style="--clr:#00D9FF">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="60"/>
-          <br><b>Python</b>
-        </div>
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="60" alt="Python" />
+        <br><b>Python</b>
       </td>
       <td align="center" width="25%">
-        <div class="card" style="--clr:#FF6B6B">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width="60"/>
-          <br><b>React</b>
-        </div>
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width="60" alt="React" />
+        <br><b>React</b>
       </td>
       <td align="center" width="25%">
-        <div class="card" style="--clr:#4ECDC4">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" width="60"/>
-          <br><b>C++</b>
-        </div>
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" width="60" alt="C++" />
+        <br><b>C++</b>
       </td>
       <td align="center" width="25%">
-        <div class="card" style="--clr:#FFE66D">
-          <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" width="60"/>
-          <br><b>TensorFlow</b>
-        </div>
+        <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" width="60" alt="TensorFlow" />
+        <br><b>TensorFlow</b>
       </td>
     </tr>
   </table>
 </div>
 
-<style>
-  .card {
-    width: 120px;
-    height: 120px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-  }
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, var(--clr), transparent);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-  .card:hover::before {
-    opacity: 0.3;
-  }
-  .card:hover {
-    transform: translateY(-12px) rotateX(15deg) rotateZ(5deg);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  }
-  .card img {
-    transition: transform 0.4s;
-  }
-  .card:hover img {
-    transform: scale(1.2) rotate(360deg);
-  }
-</style>
+---
+
+### 🎶 Spotify Now Playing
+<div align="center">
+  <!-- Replace YOUR_SPOTIFY_ID with your actual Spotify Client ID after setup -->
+  <img src="https://spotify-readme.vercel.app/api?background=0d1117&border_color=00d9ff&text_color=ffffff&progress_color=00d9ff&client_id=YOUR_SPOTIFY_ID&client_secret=YOUR_SPOTIFY_SECRET&refresh_token=YOUR_REFRESH_TOKEN&size=400" alt="Spotify Now Playing" width="400"/>
+</div>
+
+---
+
+### 💭 Random Dev Quote of the Day
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dracula" alt="Random Quote" />
+</div>
+
+---
+
+### 🐍 Contribution Snake Animation
+<div align="center">
+  <!-- After setting up the workflow, replace with: https://github.com/azmainofficial/azmainofficial/blob/output/github-contribution-grid-snake.svg -->
+  <img src="https://raw.githubusercontent.com/azmainofficial/azmainofficial/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
+</div>
 
 ---
 
