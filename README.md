@@ -1,6 +1,4 @@
-<div align="center">
-  <img src="https://media4.giphy.com/media/8c4zSICCI2BTDHco2j/giphy_s.gif" alt="Coding" width="100%" style="max-width:600px;"/>
-</div>
+
 
 <h1 align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=36&duration=4000&color=00D9FF&center=true&vCenter=true&lines=Hi+%F0%9F%91%8B%2C+I'm+Azmain+Sheikh;Full-Stack+%26+ML+Dev+%F0%9F%94%A5;From+Dhaka%2C+Bangladesh+%F0%9F%87%A7%F0%9F%87%A9" />
