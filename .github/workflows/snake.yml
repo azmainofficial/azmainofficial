@@ -1,29 +1,36 @@
-name: Generate Snake
+name: Generate Contribution Snake
 
 on:
   schedule:
     # Runs every 12 hours
     - cron: "0 */12 * * *" 
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # --- ADD THIS PERMISSIONS BLOCK ---
-    permissions: 
-      contents: write # This grants permission to commit and push files
-    # ----------------------------------
+    
+    # 💥 CRITICAL FIX: This grants the GitHub Actions bot permission to write 
+    # the generated SVG back to your repository, fixing the 403 error.
+    permissions:
+      contents: write
+      
     steps:
       - uses: actions/checkout@v4
-      - uses: platane/snk@v3
+      
+      - name: Generate the Snake SVG
+        uses: platane/snk@v3
         with:
           github_user_name: azmainofficial
           outputs: |
             output/github-contribution-grid-snake.svg
-            output/github-contribution-grid-snake-dark.svg
+            # Optional: Generates a separate dark theme version
+            output/github-contribution-grid-snake-dark.svg?palette=github-dark 
 
-      - name: Push to GitHub
+      - name: Commit and Push Snake SVG
+        # This action handles committing the generated files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🎨 Feat: Generate latest contribution snake"
-          file_pattern: output/github-contribution-grid-snake.svg
+          commit_message: "🎨 Feat: Update contribution snake"
+          # Commit both the light and dark versions
+          file_pattern: output/github-contribution-grid-snake.svg output/github-contribution-grid-snake-dark.svg
