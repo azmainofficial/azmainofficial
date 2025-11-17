@@ -57,16 +57,17 @@
 
 ---
 
-## 💭 Daily Dev Card
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="quote card" />
-</div>
-
----
 
 ## 🐍 Contribution Snake
 <div align="center">
   <img src="output/github-contribution-grid-snake-dark.svg" alt="contribution snake" width="100%"/>
+</div>
+
+---
+
+## 💭 Daily Dev Card
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="quote card" />
 </div>
 
 ---
