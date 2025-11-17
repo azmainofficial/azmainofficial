@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # --- ADD THIS PERMISSIONS BLOCK ---
+    permissions: 
+      contents: write # This grants permission to commit and push files
+    # ----------------------------------
     steps:
       - uses: actions/checkout@v4
       - uses: platane/snk@v3
@@ -17,13 +21,9 @@ jobs:
           outputs: |
             output/github-contribution-grid-snake.svg
             output/github-contribution-grid-snake-dark.svg
-          # Optional: Customize the color or theme here
-          # color_snake: '#FF1493' # Neon Magenta
-          # color_dots: '#00D9FF'  # Cyan
 
       - name: Push to GitHub
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "🎨 Feat: Generate latest contribution snake"
-          # Only commit the generated output file
           file_pattern: output/github-contribution-grid-snake.svg
