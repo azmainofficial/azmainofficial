@@ -1,7 +1,7 @@
 # Hi 👋, I'm Azmain Sheikh
-![Typing Animation](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=36&duration=4000&color=FF1493&center=true&vCenter=true&lines=Hi+%F0%9F%91%8B%2C+I'm+Azmain+Sheikh;Full-Stack+%26+ML+Dev+%F0%9F%94%A5;From+Dhaka%2C+Bangladesh+%F0%9F%87%A7%F0%9F%87%A9)
+![Typing Animation](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=36&duration=4000&color=FF1493&center=true&vCenter=true&lines=Hi+%F0%9F%91%8B%2C+I'm+Azmain+Sheikh;_Full-Stack+%26+ML+Dev+%F0%9F%94%A5;_From+Dhaka%2C+Bangladesh+%F0%9F%87%A7%F0%9F%87%A9)
 
-### Blending Software & AI — powered by code, tea, and biryani 🍛
+### Blending Software & AI — powered by Code, Tea, and Kacchi 🍛
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/azmainofficial/azmainofficial/main/assets/heart.gif" alt="heart" width="60"/>
