@@ -6,12 +6,12 @@
   </a>
 
   <p align="center">
-    <i>⚡ This hero banner is rendered from a real 2-stage x86 MBR bootloader (<code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code> & <code><a href="src/stage2_payload.asm">src/stage2_payload.asm</a></code>) booted in QEMU via GitHub Actions.</i>
+    <i>This hero banner is rendered from a 2-stage x86 MBR bootloader (<code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code> & <code><a href="src/stage2_payload.asm">src/stage2_payload.asm</a></code>) booted in QEMU via GitHub Actions.</i>
   </p>
 
   <p align="center">
     <a href="https://azmainofficial.github.io/azmainofficial/">
-      <img src="https://img.shields.io/badge/▶_Boot_AZMAIN--OS_Live-WebAssembly_v86-238636?style=for-the-badge&logo=webassembly&logoColor=white" alt="Boot in Browser" />
+      <img src="https://img.shields.io/badge/Boot_in_Browser-WebAssembly_v86-238636?style=for-the-badge&logo=webassembly&logoColor=white" alt="Boot in Browser" />
     </a>
   </p>
 
@@ -31,9 +31,9 @@
 
 ---
 
-### 💻 Quick Terminal Card
+### Quick Terminal Card
 
-Run my interactive developer bio card directly inside your Linux, macOS, or WSL terminal:
+Run the interactive developer profile card directly in any Unix, macOS, or WSL terminal:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/azmainofficial/azmainofficial/main/bio.sh | bash
@@ -41,7 +41,7 @@ curl -sL https://raw.githubusercontent.com/azmainofficial/azmainofficial/main/bi
 
 ---
 
-### 🖥️ `/proc/cpuinfo` & Kernel Diagnostics
+### /proc/cpuinfo & Kernel Diagnostics
 
 ```gdb
 (gdb) target remote /dev/azmain
@@ -54,13 +54,13 @@ $1 = {
     current    = {"Python", "Laravel", "React Native", "TensorFlow"},
     ask_me     = {"C++", "Qt", "ML Pipelines", "System Design"},
     contact    = "azmiansheikh.nub@gmail.com",
-    diagnostic = "I debug faster than I eat biryani 🍛"
+    diagnostic = "I debug faster than I eat biryani."
 }
 ```
 
 ---
 
-### 💾 Mounted File Systems & Featured Focus Areas
+### Mounted File Systems & Active Partitions
 
 ```bash
 azmain@bare-metal:~$ df -hT --type=ext4
@@ -73,7 +73,7 @@ Filesystem      Type   Size  Used Avail Use%  Mounted on               Descripti
 
 ---
 
-### 🛠️ Hardware & Software Stack
+### Hardware & Software Stack
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=c,cpp,qt,py,tensorflow,nodejs,react,reactnative,laravel,mysql,mongodb,linux,git&perline=7" alt="tech stack" />
@@ -81,27 +81,26 @@ Filesystem      Type   Size  Used Avail Use%  Mounted on               Descripti
 
 ---
 
-### 📊 System Telemetry & Glory
+### System Telemetry & Statistics
 
 <div align="center">
-  <img height="180" src="https://github-readme-streak-stats.herokuapp.com/?user=azmainofficial&theme=tokyonight&hide_border=true&border_radius=10" alt="streak stats"/>
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=azmainofficial&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&border_radius=10" alt="github stats"/>
+  <img height="170" src="https://github-readme-stats-eight-theta.vercel.app/api?username=azmainofficial&show_icons=true&theme=tokyonight&hide_border=true&border_radius=8" alt="github stats"/>
+  <img height="170" src="https://streak-stats.demolab.com/?user=azmainofficial&theme=tokyonight&hide_border=true&border_radius=8" alt="streak stats"/>
   <br/><br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=azmainofficial&layout=compact&theme=tokyonight&hide_border=true&border_radius=10" alt="top languages"/>
-  <img src="https://github-profile-trophy.vercel.app/?username=azmainofficial&theme=tokyonight&no-frame=true" alt="trophies"/>
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=azmainofficial&layout=compact&theme=tokyonight&hide_border=true&border_radius=8" alt="top languages"/>
 </div>
 
 ---
 
-### 🎵 Audio Subsystem (Now Playing on Spotify)
+### Audio Subsystem
 
 <div align="center">
-  <img src="assets/spotify-player.svg" alt="now playing" width="400"/>
+  <img src="assets/spotify-player.svg" alt="audio subsystem" width="400"/>
 </div>
 
 ---
 
-### 🐍 Memory Allocation Matrix (Contribution Snake)
+### Memory Allocation Matrix
 
 <div align="center">
   <img src="output/github-contribution-grid-snake-dark.svg" alt="contribution snake" width="100%"/>
@@ -109,14 +108,6 @@ Filesystem      Type   Size  Used Avail Use%  Mounted on               Descripti
 
 ---
 
-### 💬 Daily Dev Quote
-
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="quote card" />
-</div>
-
----
-
-<div align="center">
-  <sub>Built with ☕, x86 Assembly, and raw curiosity. Feel free to inspect <code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code> to see how this profile was created!</sub>
+  <sub>Built with x86 Assembly, C, and QEMU. Source code available in <code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code>.</sub>
 </div>

@@ -35,7 +35,7 @@ echo -e "${YELLOW}Focus      :${NC} Systems Programming, C++, Qt, ML Pipelines"
 echo -e "${YELLOW}Core Stack :${NC} C / C++ / Qt / Python / TensorFlow / Laravel / React Native"
 echo -e "${YELLOW}Status     :${NC} Active 09:00 - 02:00 BDT [Online]"
 echo -e "${YELLOW}Philosophy :${NC} \"Blending Software & AI - powered by Code, Tea & Kacchi\""
-echo -e "${YELLOW}Diagnostic :${NC} \"I debug faster than I eat biryani 🍛\""
+echo -e "${YELLOW}Diagnostic :${NC} \"I debug faster than I eat biryani.\""
 echo -e "${GRAY}------------------------------------------------------------${NC}"
 echo -e "${B_CYAN}Connect with me:${NC}"
 echo -e "  ${BLUE}GitHub   :${NC} https://github.com/azmainofficial"
@@ -44,3 +44,4 @@ echo -e "  ${BLUE}Email    :${NC} azmiansheikh.nub@gmail.com"
 echo -e "${GRAY}------------------------------------------------------------${NC}"
 echo -e "${GRAY}[*] Tip: Inspect the bare-metal bootloader at https://github.com/azmainofficial/azmainofficial${NC}"
 echo
+
