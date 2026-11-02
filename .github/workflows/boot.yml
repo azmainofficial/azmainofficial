@@ -1,0 +1,45 @@
+name: Build & Render Bare-Metal Profile
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'Makefile'
+      - '.github/workflows/boot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Toolchain (NASM, QEMU, Asciinema, Node.js)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nasm qemu-system-x86 asciinema
+          sudo npm install -g svg-term-cli
+
+      - name: Compile 2-Stage Bootloader & OS Image
+        run: |
+          make all
+          ls -la build/
+
+      - name: Boot in QEMU & Record Serial Output
+        run: |
+          asciinema rec --overwrite -c "timeout --preserve-status 6s qemu-system-x86_64 -drive format=raw,file=build/boot.img,if=floppy -nographic -serial stdio" build/boot.cast
+
+      - name: Generate Animated SVG Terminal
+        run: |
+          svg-term --cast build/boot.cast --out assets/boot.svg --window --width 85 --height 20 --theme monokai
+
+      - name: Commit & Push Updated SVG
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(kernel): rebuild and render boot sequence [skip ci]"
+          file_pattern: "assets/boot.svg"
