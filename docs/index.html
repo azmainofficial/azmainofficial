@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZMAIN-OS — Bare-Metal x86 WebAssembly Emulator</title>
+  <script src="https://cdn.jsdelivr.net/npm/v86@latest/build/libv86.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Fira Code', 'JetBrains Mono', 'Segoe UI', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 820px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #58a6ff;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+    p.subtitle {
+      color: #8b949e;
+      font-size: 0.95rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    #screen_container {
+      background: #000000;
+      border: 2px solid #30363d;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      margin: 0 auto;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #screen_container canvas {
+      display: block;
+      margin: 0 auto;
+    }
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      background-color: #238636;
+      color: #ffffff;
+      border: 1px solid rgba(240, 246, 252, 0.1);
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-family: inherit;
+    }
+    .btn:hover {
+      background-color: #2ea043;
+    }
+    .btn-secondary {
+      background-color: #21262d;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background-color: #30363d;
+      color: #58a6ff;
+    }
+    #status {
+      color: #8b949e;
+      font-size: 0.85rem;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ AZMAIN-OS (x86 16-Bit Real Mode)</h1>
+    <p class="subtitle">Live WebAssembly virtual machine running <code>boot.img</code> directly in your browser.</p>
+
+    <div id="screen_container">
+      <div id="terminal_placeholder" style="color: #6e7681; font-size: 14px; padding: 20px;">
+        Virtual PC Powered Down.<br/>Click <b>Boot Virtual Machine</b> to load the floppy image into RAM.
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="boot_btn" onclick="startEmulator()">▶ Boot Virtual Machine</button>
+      <a href="https://github.com/azmainofficial/azmainofficial" class="btn-secondary">GitHub Repository</a>
+    </div>
+
+    <p id="status">Status: Standby</p>
+  </div>
+
+  <script>
+    var emulator = null;
+    function startEmulator() {
+      var placeholder = document.getElementById('terminal_placeholder');
+      if (placeholder) placeholder.style.display = 'none';
+
+      var statusText = document.getElementById('status');
+      statusText.innerText = 'Status: Fetching SeaBIOS and boot.img into WebAssembly memory...';
+      document.getElementById('boot_btn').style.display = 'none';
+
+      try {
+        emulator = new V86Starter({
+          wasm_path: "https://cdn.jsdelivr.net/npm/v86@latest/build/v86.wasm",
+          memory_size: 32 * 1024 * 1024,
+          vga_memory_size: 2 * 1024 * 1024,
+          screen_container: document.getElementById("screen_container"),
+          bios: { url: "https://cdn.jsdelivr.net/npm/v86@latest/bios/seabios.bin" },
+          fda: { url: "boot.img" },
+          autostart: true
+        });
+
+        emulator.add_listener("emulator-ready", function() {
+          statusText.innerText = 'Status: CPU Online [x86 16-bit]. Emulation running at 60 FPS.';
+        });
+      } catch (err) {
+        statusText.innerText = 'Error initializing emulator: ' + err;
+      }
+    }
+  </script>
+</body>
+</html>

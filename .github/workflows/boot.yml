@@ -28,6 +28,8 @@ jobs:
       - name: Compile 2-Stage Bootloader & OS Image
         run: |
           make all
+          mkdir -p docs assets
+          cp build/boot.img docs/boot.img
           ls -la build/
 
       - name: Boot in QEMU & Record Serial Output
@@ -38,8 +40,8 @@ jobs:
         run: |
           svg-term --cast build/boot.cast --out assets/boot.svg --window --width 85 --height 20 --theme monokai
 
-      - name: Commit & Push Updated SVG
+      - name: Commit & Push Updated Artifacts
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(kernel): rebuild and render boot sequence [skip ci]"
-          file_pattern: "assets/boot.svg"
+          commit_message: "chore(kernel): rebuild boot sequence & wasm image [skip ci]"
+          file_pattern: "assets/boot.svg docs/boot.img"

@@ -10,6 +10,12 @@
   </p>
 
   <p align="center">
+    <a href="https://azmainofficial.github.io/azmainofficial/">
+      <img src="https://img.shields.io/badge/▶_Boot_AZMAIN--OS_Live-WebAssembly_v86-238636?style=for-the-badge&logo=webassembly&logoColor=white" alt="Boot in Browser" />
+    </a>
+  </p>
+
+  <p align="center">
     <a href="https://github.com/azmainofficial"><img src="https://komarev.com/ghpvc/?username=azmainofficial&label=Profile+views&color=58a6ff&style=flat-square" alt="profile views" /></a>
     <a href="https://github.com/azmainofficial?tab=followers"><img src="https://img.shields.io/github/followers/azmainofficial?label=Followers&style=flat-square&color=238636" alt="github followers" /></a>
     <img src="https://img.shields.io/badge/Architecture-x86__64%20%7C%20ARM-8957e5?style=flat-square" alt="Arch" />
@@ -22,6 +28,16 @@
   </p>
 
 </div>
+
+---
+
+### 💻 Quick Terminal Card
+
+Run my interactive developer bio card directly inside your Linux, macOS, or WSL terminal:
+
+```bash
+curl -sL https://raw.githubusercontent.com/azmainofficial/azmainofficial/main/bio.sh | bash
+```
 
 ---
 
@@ -40,6 +56,19 @@ $1 = {
     contact    = "azmiansheikh.nub@gmail.com",
     diagnostic = "I debug faster than I eat biryani 🍛"
 }
+```
+
+---
+
+### 💾 Mounted File Systems & Featured Focus Areas
+
+```bash
+azmain@bare-metal:~$ df -hT --type=ext4
+Filesystem      Type   Size  Used Avail Use%  Mounted on               Description
+/dev/nvme0n1p1  ext4    10G  8.2G  1.8G  82%  /projects/azmainofficial  [x86 Real-Mode Bootloader & QEMU Engine]
+/dev/sda1       ext4   500M  120M  380M  24%  /skills/cpp-qt-systems    [High-Performance Native Architecture]
+/dev/sdb1       ext4   2.0G  1.4G  600M  70%  /skills/ml-tensorflow     [Neural Networks & Predictive Models]
+/dev/sdc1       ext4   1.2G  900M  300M  75%  /skills/fullstack-web-app [React Native & Laravel Ecosystems]
 ```
 
 ---
