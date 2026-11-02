@@ -1,12 +1,12 @@
 <div align="center">
 
-  <!-- Bare-Metal Bootloader Animated Hero Banner -->
+  <!-- Bare-Metal Robotics Bootloader Animated Hero Banner -->
   <a href="https://github.com/azmainofficial/azmainofficial/tree/main/src">
-    <img src="assets/boot.svg" alt="AZMAIN-OS x86 Bootloader" width="100%" />
+    <img src="assets/boot.svg" alt="AZMAIN-ROBOTICS RTOS Bootloader" width="100%" />
   </a>
 
   <p align="center">
-    <i>This hero banner is rendered from a 2-stage x86 MBR bootloader (<code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code> & <code><a href="src/stage2_payload.asm">src/stage2_payload.asm</a></code>) booted in QEMU via GitHub Actions.</i>
+    <i>This hero banner is rendered from a 2-stage x86 MBR robotics kernel (<code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code> & <code><a href="src/stage2_payload.asm">src/stage2_payload.asm</a></code>) booted in QEMU via GitHub Actions.</i>
   </p>
 
   <p align="center">
@@ -16,10 +16,11 @@
   </p>
 
   <p align="center">
-    <a href="https://github.com/azmainofficial"><img src="https://komarev.com/ghpvc/?username=azmainofficial&label=Profile+views&color=58a6ff&style=flat-square" alt="profile views" /></a>
-    <a href="https://github.com/azmainofficial?tab=followers"><img src="https://img.shields.io/github/followers/azmainofficial?label=Followers&style=flat-square&color=238636" alt="github followers" /></a>
-    <img src="https://img.shields.io/badge/Architecture-x86__64%20%7C%20ARM-8957e5?style=flat-square" alt="Arch" />
-    <img src="https://img.shields.io/badge/Active-09%3A00%20--%2002%3A00%20(UTC%2B6)-d29922?style=flat-square" alt="Active Hours" />
+    <a href="https://github.com/azmainofficial"><img src="https://komarev.com/ghpvc/?username=azmainofficial&label=Telemetry+Views&color=58a6ff&style=flat-square" alt="profile views" /></a>
+    <a href="https://github.com/azmainofficial?tab=followers"><img src="https://img.shields.io/github/followers/azmainofficial?label=Network&style=flat-square&color=238636" alt="github followers" /></a>
+    <img src="https://img.shields.io/badge/Discipline-Robotics%20Engineering-8957e5?style=flat-square" alt="Discipline" />
+    <img src="https://img.shields.io/badge/Focus-ROS%202%20%7C%20CAD%20%7C%20Deep%20Learning-0969da?style=flat-square" alt="Focus" />
+    <img src="https://img.shields.io/badge/Location-Dhaka%2C%20Bangladesh%20(UTC%2B6)-d29922?style=flat-square" alt="Location" />
   </p>
 
   <p align="center">
@@ -33,7 +34,7 @@
 
 ### Quick Terminal Card
 
-Run the interactive developer profile card directly in any Unix, macOS, or WSL terminal:
+Inspect my robotics engineering identity card directly from your terminal:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/azmainofficial/azmainofficial/main/bio.sh | bash
@@ -41,43 +42,59 @@ curl -sL https://raw.githubusercontent.com/azmainofficial/azmainofficial/main/bi
 
 ---
 
-### /proc/cpuinfo & Kernel Diagnostics
+### /proc/robotics_core & Diagnostics
 
 ```gdb
-(gdb) target remote /dev/azmain
-Remote debugging using /dev/azmain
-(gdb) print *developer_info
+(gdb) target remote /dev/robotics_core
+Remote debugging using /dev/robotics_core
+(gdb) print *robotics_engineer
 $1 = {
-    name       = "Azmain Sheikh",
-    location   = "Dhaka, Bangladesh [UTC+6]",
-    focus      = "Blending Systems Programming, Full-Stack & Machine Learning",
-    current    = {"Python", "Laravel", "React Native", "TensorFlow"},
-    ask_me     = {"C++", "Qt", "ML Pipelines", "System Design"},
-    contact    = "azmiansheikh.nub@gmail.com",
-    diagnostic = "I debug faster than I eat biryani."
+    name         = "Azmain Sheikh",
+    discipline   = "Robotics Engineering & Autonomous Systems",
+    frameworks   = {"ROS", "ROS 2 Humble", "Micro-ROS", "RViz", "Gazebo"},
+    perception   = {"Computer Vision", "OpenCV", "Deep Learning", "PyTorch"},
+    fabrication  = {"Parametric CAD Modeling", "3D Printing (FDM/SLA)", "Rapid Prototyping"},
+    embedded_iot = {"C/C++", "STM32", "ESP32", "FreeRTOS", "CAN Bus", "I2C", "SPI", "MQTT"},
+    research     = "Neural Network Kinematic Control & Vision-Guided Manipulation"
 }
 ```
 
 ---
 
-### Mounted File Systems & Active Partitions
+### Hardware Interfaces & Active ROS 2 Nodes
 
 ```bash
-azmain@bare-metal:~$ df -hT --type=ext4
-Filesystem      Type   Size  Used Avail Use%  Mounted on               Description
-/dev/nvme0n1p1  ext4    10G  8.2G  1.8G  82%  /projects/azmainofficial  [x86 Real-Mode Bootloader & QEMU Engine]
-/dev/sda1       ext4   500M  120M  380M  24%  /skills/cpp-qt-systems    [High-Performance Native Architecture]
-/dev/sdb1       ext4   2.0G  1.4G  600M  70%  /skills/ml-tensorflow     [Neural Networks & Predictive Models]
-/dev/sdc1       ext4   1.2G  900M  300M  75%  /skills/fullstack-web-app [React Native & Laravel Ecosystems]
+azmain@robotics-node:~$ ros2 node list && ls -l /dev/robotics/*
+Active Nodes:
+  /perception/camera_depth_estimation     [PyTorch / OpenCV - 30 FPS Active]
+  /control/trajectory_planner             [Inverse Kinematics - Converged]
+  /hardware/can_actuator_bridge           [CAN Bus 1Mbps - All Nodes Online]
+  /sensors/imu_fusion_filter              [Extended Kalman Filter - Calibrated]
+
+Connected Hardware Bus:
+  /dev/can0          -> Dual Brushless Motor Controllers & Magnetic Encoders
+  /dev/ttyUSB0       -> Micro-ROS Hardware Bridge (STM32 / ESP32 Microcontroller)
+  /dev/video0        -> Stereo Depth / Global Shutter Computer Vision Sensor
+  /dev/i2c-1         -> 9-DOF IMU, Barometer, ToF Distance & Environmental IoT Sensors
+  /dev/spi0          -> High-Speed Actuator DAC & Real-Time Position Feedback
 ```
 
 ---
 
-### Hardware & Software Stack
+### Robotics & Embedded Engineering Stack
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=c,cpp,qt,py,tensorflow,nodejs,react,reactnative,laravel,mysql,mongodb,linux,git&perline=7" alt="tech stack" />
+  <img src="https://skillicons.dev/icons?i=ros,cpp,c,py,pytorch,tensorflow,opencv,linux,arduino,raspberrypi,mysql,git&perline=12" alt="robotics stack" />
 </div>
+
+<br/>
+
+| Domain | Technologies & Competencies |
+| :--- | :--- |
+| **Robotics & Middleware** | ROS, ROS 2 (Humble/Iron), Micro-ROS, URDF/XACRO, Kinematics, SLAM, Nav2, MoveIt |
+| **Hardware & Fabrication**| Parametric CAD Modeling, 3D Printing (FDM/Resin SLA), Prototyping, Actuator Sizing |
+| **Vision & Neural Networks** | Computer Vision, OpenCV, PyTorch, TensorFlow, Deep Learning for Robotics Perception |
+| **Embedded Systems & IoT**| C, C++, STM32, ESP32, FreeRTOS, Bare-Metal Drivers, CAN Bus, I2C, SPI, UART, MQTT |
 
 ---
 
@@ -109,5 +126,5 @@ Filesystem      Type   Size  Used Avail Use%  Mounted on               Descripti
 ---
 
 <div align="center">
-  <sub>Built with x86 Assembly, C, and QEMU. Source code available in <code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code>.</sub>
+  <sub>Engineered with x86 Assembly, ROS 2, and embedded systems. Source code available in <code><a href="src/stage1_mbr.asm">src/stage1_mbr.asm</a></code>.</sub>
 </div>

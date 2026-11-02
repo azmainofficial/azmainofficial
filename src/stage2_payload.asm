@@ -1,6 +1,6 @@
 ; ==============================================================================
-;  AZMAIN-OS: Stage 2 Profile Payload & Kernel Diagnostics
-;  Developer: Azmain Sheikh (@azmainofficial)
+;  AZMAIN-ROBOTICS: Stage 2 Kernel Diagnostics & Node Manager
+;  Developer: Azmain Sheikh (@azmainofficial) - Robotics Engineer
 ;  Loaded at: 0x0000:0x7E00
 ; ==============================================================================
 
@@ -8,23 +8,17 @@
 [ORG 0x7E00]
 
 stage2_entry:
-    ; Set segments
     xor ax, ax
     mov ds, ax
     mov es, ax
 
-    ; Print Stage 2 profile banner
-    mov si, profile_msg
+    mov si, robotics_banner
     call print_string
 
-    ; Finished boot sequence - halt CPU
 halt_loop:
     hlt
     jmp halt_loop
 
-; ------------------------------------------------------------------------------
-; Helper: Write null-terminated string to COM1 and VGA Screen with delay
-; ------------------------------------------------------------------------------
 print_string:
     pusha
 .next:
@@ -32,7 +26,7 @@ print_string:
     test al, al
     jz .done
 
-    ; Output to COM1
+    ; Output to COM1 UART
     push ax
     mov dx, 0x3FD
 .wait_tx:
@@ -53,13 +47,13 @@ print_string:
     pop ax
     pop bx
 
-    ; Cadence Delay (Wait CX:DX microseconds via BIOS INT 15h)
+    ; Microsecond delay for cadence
     push cx
     push dx
     push ax
     mov ah, 0x86
     mov cx, 0x0000
-    mov dx, 0x2500          ; ~9.5ms delay per char for typewriter effect
+    mov dx, 0x2200          ; ~8.7ms per char
     int 0x15
     pop ax
     pop dx
@@ -71,34 +65,32 @@ print_string:
     ret
 
 ; ------------------------------------------------------------------------------
-; Data & ANSI Strings
+; Robotics Diagnostic Strings & ANSI Terminal Codes
 ; ------------------------------------------------------------------------------
 CRLF equ 0x0D, 0x0A
 ESC  equ 0x1B
 
-profile_msg:
-    ; Kernel initialization lines
-    db ESC, "[38;5;244m[  0.012400] ", ESC, "[1;32mStage 2 Payload active @ 0x7E00", ESC, "[0m", CRLF
-    db ESC, "[38;5;244m[  0.038000] ", ESC, "[0;36mInitializing COM1 115200 8N1 serial console ... OK", ESC, "[0m", CRLF
-    db ESC, "[38;5;244m[  0.065000] ", ESC, "[0;36mTesting memory (640K Base / 64M Extended) ..... OK", ESC, "[0m", CRLF
-    db ESC, "[38;5;244m[  0.095000] ", ESC, "[1;33mLoading target payload: developer.profile ...", ESC, "[0m", CRLF
+robotics_banner:
+    db ESC, "[38;5;244m[  0.012400] ", ESC, "[1;32mAZMAIN-ROBOTICS RTOS v2.0.0", ESC, "[0m (x86_64 Real Mode)", CRLF
+    db ESC, "[38;5;244m[  0.038000] ", ESC, "[0;36mInitializing CAN Bus, I2C & SPI peripheral buses ... OK", ESC, "[0m", CRLF
+    db ESC, "[38;5;244m[  0.065000] ", ESC, "[0;36mCalibrating IMU, Kinematics & Motor Encoders ........ OK", ESC, "[0m", CRLF
+    db ESC, "[38;5;244m[  0.098000] ", ESC, "[1;33mStarting ROS 2 Daemon & Neural Vision Pipeline ...... OK", ESC, "[0m", CRLF
     
-    ; Cyber-styled Profile Table
+    ; Cyber-styled Robotics Profile Box
     db ESC, "[38;5;39m+-------------------------------------------------------------------------+", ESC, "[0m", CRLF
     db ESC, "[38;5;39m| ", ESC, "[1;37mIDENTIFIER : ", ESC, "[1;35mAzmain Sheikh (@azmainofficial)", ESC, "[38;5;39m                           |", ESC, "[0m", CRLF
-    db ESC, "[38;5;39m| ", ESC, "[1;37mLOCATION   : ", ESC, "[0;32mDhaka, Bangladesh [UTC+6]", ESC, "[38;5;39m                                |", ESC, "[0m", CRLF
-    db ESC, "[38;5;39m| ", ESC, "[1;37mROLE       : ", ESC, "[1;36mFull-Stack & ML Dev | Blending Software & AI", ESC, "[38;5;39m              |", ESC, "[0m", CRLF
-    db ESC, "[38;5;39m| ", ESC, "[1;37mSTACK      : ", ESC, "[0;33mC, C++, Qt, Python, TensorFlow, React Native, Laravel", ESC, "[38;5;39m     |", ESC, "[0m", CRLF
-    db ESC, "[38;5;39m| ", ESC, "[1;37mTAGLINE    : ", ESC, "[38;5;214m\"Powered by Code, Tea, and Kacchi\"", ESC, "[38;5;39m                        |", ESC, "[0m", CRLF
-    db ESC, "[38;5;39m| ", ESC, "[1;37mDIAGNOSTIC : ", ESC, "[38;5;198m\"I debug faster than I eat biryani.\"", ESC, "[38;5;39m                      |", ESC, "[0m", CRLF
+    db ESC, "[38;5;39m| ", ESC, "[1;37mDISCIPLINE : ", ESC, "[1;32mRobotics Engineer & Deep Learning Researcher", ESC, "[38;5;39m             |", ESC, "[0m", CRLF
+    db ESC, "[38;5;39m| ", ESC, "[1;37mROBOTICS   : ", ESC, "[1;36mROS, ROS 2, Micro-ROS, Kinematics, SLAM, Actuators", ESC, "[38;5;39m       |", ESC, "[0m", CRLF
+    db ESC, "[38;5;39m| ", ESC, "[1;37mHARDWARE   : ", ESC, "[0;33mCAD Modeling, 3D Printing, Rapid Prototyping, IoT", ESC, "[38;5;39m        |", ESC, "[0m", CRLF
+    db ESC, "[38;5;39m| ", ESC, "[1;37mAI & VISION: ", ESC, "[38;5;214mComputer Vision, Neural Networks, PyTorch, OpenCV", ESC, "[38;5;39m         |", ESC, "[0m", CRLF
+    db ESC, "[38;5;39m| ", ESC, "[1;37mEMBEDDED   : ", ESC, "[38;5;198mC/C++, STM32, ESP32, FreeRTOS, Linux Kernel, I2C/SPI", ESC, "[38;5;39m      |", ESC, "[0m", CRLF
     db ESC, "[38;5;39m+-------------------------------------------------------------------------+", ESC, "[0m", CRLF
 
-    ; Ready prompt
-    db ESC, "[38;5;244m[  0.210000] ", ESC, "[1;32mKernel ready.", ESC, "[0m Dropping to interactive userland shell...", CRLF, CRLF
-    db ESC, "[1;32mazmain@bare-metal", ESC, "[0m:", ESC, "[1;34m~", ESC, "[0m$ cat /proc/status | grep FOCUS", CRLF
-    db ">> High-performance systems, Machine Learning pipelines & modern full-stack apps.", CRLF
-    db ESC, "[1;32mazmain@bare-metal", ESC, "[0m:", ESC, "[1;34m~", ESC, "[0m$ ", 0
+    db ESC, "[38;5;244m[  0.220000] ", ESC, "[1;32mRobotics Subsystems Online.", ESC, "[0m Dropping to interactive shell...", CRLF, CRLF
+    db ESC, "[1;32mazmain@robotics-node", ESC, "[0m:", ESC, "[1;34m~", ESC, "[0m$ ros2 node list && ./inspect_actuators.sh", CRLF
+    db ">> /vision/camera_stream  [30 FPS Active]", CRLF
+    db ">> /control/inverse_kinematics  [Converged]", CRLF
+    db ">> /sensors/imu_fusion  [Calibrated 0.001 deg]", CRLF
+    db ESC, "[1;32mazmain@robotics-node", ESC, "[0m:", ESC, "[1;34m~", ESC, "[0m$ ", 0
 
-; Pad to a clean 4 sectors (2048 bytes)
 times 2048 - ($ - $$) db 0
-
